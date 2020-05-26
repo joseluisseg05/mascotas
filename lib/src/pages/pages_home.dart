@@ -22,19 +22,7 @@ class _PageHomeState extends State<PageHome> {
   int _radioSex=0;
   
   final _clave= GlobalKey<FormState>();
-  /*
-  String _tipo="Gato";//mascota
-  String _sex="user.png";//imagen
-  String _auxTipo="cat.png";
-  int _radio=0;
-  int _radioSex=0;
-  final _clave= GlobalKey<FormState>();
-  final TextEditingController _nombre = TextEditingController();
-  final TextEditingController _apellido = TextEditingController();
-  final TextEditingController _edad = TextEditingController();
 
-  final TextEditingController _nommas = TextEditingController();
-  final TextEditingController _edmas = TextEditingController();*/
 
   @override
   Widget build(BuildContext context) {
