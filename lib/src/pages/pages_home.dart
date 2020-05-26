@@ -203,10 +203,12 @@ class _PageHomeState extends State<PageHome> {
                 _edad=valor;
               });
             },
+            inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
             validator: (validar){
               if(validar.isEmpty){
                 return "Se requiere la edad";
               }
+              if(validar=="17"){return "Se requiere ser mayor de edad";}
             },
           ),
         ],
