@@ -1,6 +1,7 @@
 //Realizar las implementaciones de las validaciones ???
 import 'package:app_mascota/src/pages/pages_detalle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class PageHome extends StatefulWidget {
   @override
@@ -282,7 +283,7 @@ class _PageHomeState extends State<PageHome> {
           ),
           SizedBox(height: 20.0,),
           TextFormField(
-            keyboardType: TextInputType.numberWithOptions(signed: true, decimal: false),
+            keyboardType: TextInputType.numberWithOptions(signed: false, decimal: false),
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(//bordeado del input
                 borderSide: BorderSide(width: 3,color: Color.fromRGBO(37, 68, 52, 1),),
@@ -298,10 +299,12 @@ class _PageHomeState extends State<PageHome> {
                 _edmas=valor;
               });
             },
+            inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
             validator: (validar){
               if(validar.isEmpty){
                 return "Se requiere la edad de la mascota";
               }
+              if(validar=="0"){return "Se requiere minimo un año";}
             },
           ),
         ],
