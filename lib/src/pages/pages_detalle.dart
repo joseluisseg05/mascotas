@@ -9,15 +9,17 @@ class PageDetalle extends StatelessWidget {
   PageDetalle ({this.nombre, this.apellido, this.edad, this.sexo, this.tipo, this.imagenmas, this.nommas, this.edmas});
   final String nombre;
   final String apellido;
-  final int edad;
+  final String edad;
   final String sexo;
   final String tipo;
   final String imagenmas;
   final String nommas;
-  final int edmas;
+  final String edmas;
+  String anios;
 
   @override
   Widget build(BuildContext context) {
+    if(edmas=="1"){anios="año";}else{anios="años";}
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
@@ -69,7 +71,7 @@ class PageDetalle extends StatelessWidget {
                         height: 180.0,//tamaño de la imagen
                         width: 180.0,
                       ),
-                      Text("$nombre $apellido \n$edad años de edad.\n\nDueño de un $tipo\nde $edmas años, llamado"),
+                      Text("$nombre $apellido \n$edad años de edad.\n\nDueño de un $tipo\nde $edmas $anios, llamado"),
                     ],
                   ),
                 ),
